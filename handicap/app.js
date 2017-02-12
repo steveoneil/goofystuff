@@ -25,7 +25,7 @@ var roster = [];
 
 for (i = 0; i < scoreData.length; i++) {
     let scoreEntry = scoreData[i];
-    if (scoreEntry[9] === HOMECOURSE) {
+    if ((scoreEntry[9] === HOMECOURSE) && (!scoreEntry[7].includes('C'))) {
         let existingGolfer = false;
         for (j = 0; ((j < roster.length) && (!existingGolfer)); j++) {
             if (scoreEntry[0] === roster[j].id) {
