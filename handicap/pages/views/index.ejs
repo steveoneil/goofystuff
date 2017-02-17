@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">        
+  </head>
+  
+  <body>
+      <div class="container">
+        <h1> Score Posting Report </h1>
+        <br>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Individual Id</th>
+                <th>Name</th>
+                <th>Tee Sheet Appearances</th>
+                <th>Scores Posted</th>
+                <th>Adjustments</th>
+                <th>Score Posting %</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for (let i = 0; i < spr.length; i++) { %>
+            <tr>
+                <td><%=spr[i].id%></td>
+                <td><%=spr[i].name%></td>
+                <td><%=spr[i].teeSheetAppearances%></td>
+                <td><%=spr[i].scoresPosted%></td>
+                <td><%=spr[i].adjustments%></td>
+                <td>100%</td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+      </div>
+  </body>
+  
+</html>

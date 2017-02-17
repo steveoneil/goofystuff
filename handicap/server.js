@@ -1,3 +1,25 @@
+
+const express = require ('express');
+const app = express();
+
+app.set('views', 'pages/views');
+app.set('view engine', 'ejs');
+
+app.use(express.static(__dirname + '/'));
+
+app.get('/', function(req, res){
+    let scoreData = readScores(inputScoreFile, inputScoreFileSheetName);
+    let spr = addScores(scoreData, HOMECOURSE);
+    res.render('index', {spr: spr});
+});
+
+app.listen(8080, () => {
+	console.log('Server Started on http://localhost:8080');
+	console.log('Press CTRL + C to stop server');
+});
+
+// --------------- app.js code ----------------------
+
 var XLSX = require('xlsx');
 
 const HOMECOURSE = 'St. George\'s Golf & Country Club';
@@ -87,4 +109,5 @@ function writeExcelFile (scoreReport) {
 // let spr = addScores(scoreData, HOMECOURSE);
 // let scoreReport = writeSPRReport(spr);
 // writeExcelFile(scoreReport);
+
 
